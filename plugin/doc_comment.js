@@ -445,6 +445,8 @@
     } else if (node.type == "CallExpression") {
     } else { // An object property
       if (isFunExpr(node.value)) fn = node.value.scope.fnType;
+      else if (fn = aval.types && aval.types[0] && aval.types[0].args)
+        fn = aval.types[0];
     }
 
     if (fn && (args || ret || self)) {
