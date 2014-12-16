@@ -410,6 +410,8 @@
     } else if (node.type == "CallExpression") {
     } else { // An object property
       if (node.value.type == "FunctionExpression") fn = node.value.body.scope.fnType;
+      else if (fn = aval.types && aval.types[0] && aval.types[0].args)
+        fn = aval.types[0];
     }
 
     if (fn && (args || ret || self)) {
