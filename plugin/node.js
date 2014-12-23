@@ -45,7 +45,7 @@
 
   function resolveModule(server, name, _parent) {
     server.addFile(name, null, server._node.currentOrigin);
-    return getModule(server._node, name);
+    return getModule(server._node, resolveProjectPath(server, name));
   }
 
   // Assume node.js & access to local file system
